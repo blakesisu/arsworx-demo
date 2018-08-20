@@ -9,12 +9,13 @@ import ExampleMap from 'components/_shared/Map/ExampleMap';
 // SVGs
 // Constants
 // Styles
-import './Home.css';
+import './Main.css';
 
 // Redux
 const mapStateToProps = state => ({
   // requesting: state.api.requesting,
   // user: state.db.user,
+  providers: state.db.providers,
 });
 
 export class Home extends React.Component {
@@ -47,14 +48,28 @@ export class Home extends React.Component {
 
   // Render methods
   // ------------------------------------------------------------------------ //
+  renderProviders = () => {
+    return this.props.providers.providers.map(provider => (
+      <li key={provider.title} className={`provider`}>
+        <p>Name: {provider.title}</p>
+        <p>Address: {provider.location.address}</p>
+        <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
+        <p>Telephone: {provider.phone}</p>
+        <p>Website: {provider.website}</p>
+      </li>
+    ))
+  }
+
   render() {
     return (
-      <div>
-        <ErrorBoundary>
-          <p> Sisu map testing! </p>
-          <ExampleMap />
-        </ErrorBoundary>
-      </div>
+      <ErrorBoundary>
+        <main className={`main`}>
+          <ul className={`providers-list`}>
+            { !this.props.providers.requesting && this.renderProviders() }
+          </ul>
+          <ExampleMap providers={this.props.providers.providers}/>
+        </main>
+      </ErrorBoundary>
     );
   }
 }

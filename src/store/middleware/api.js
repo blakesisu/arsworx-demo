@@ -9,7 +9,7 @@ export const API_ROOT =
   '<PRODUCTION_ADDRESS>';
 export const API_MOCK_ROOT =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000/data/'
+    ? 'http://localhost:5013/data/'
     : '<STAGE_ADDRESS>/data/';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';

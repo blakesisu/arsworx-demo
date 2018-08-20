@@ -35,7 +35,7 @@ class ExampleMap extends React.Component {
     this.state = {
       lat: 36.9741,
       lng: -122.0308,
-      zoom: 13
+      zoom: 11
     }
   }
 
@@ -58,7 +58,6 @@ class ExampleMap extends React.Component {
     if ("geolocation" in navigator) {
       /* geolocation is available */
       navigator.geolocation.getCurrentPosition(position => {
-        console.log('check position', position)
         this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
       });
     } else {
@@ -66,6 +65,29 @@ class ExampleMap extends React.Component {
       return;
     }
   }
+
+  createMarkers = () => {
+    return this.props.providers.map(provider => {
+      return (
+        <Marker key={provider.phone} position={[
+          provider.location.longitude,
+          provider.location.latitude
+        ]}>
+          <Popup>
+            <div key={provider.title} className={`provider`}>
+              <p>Name: {provider.title}</p>
+              <p>Address: {provider.location.address}</p>
+              <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
+              <p>Telephone: {provider.phone}</p>
+              <p>Website: {provider.website}</p>
+            </div>
+          </Popup>
+        </Marker>
+      )
+    })
+
+  }
+
 
   handleMarker = ({ event, anchor, payload }) => {
     console.log('check marker', event, anchor, payload)
@@ -83,11 +105,7 @@ class ExampleMap extends React.Component {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br/> Easily customizable.
-            </Popup>
-          </Marker>
+          {this.props.providers.length > 0 && this.createMarkers()}
         </LeafletMap>
       </div>
     );

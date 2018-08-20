@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Components
 // SVGs
-// import Logo from 'svgs/logo.svg';
+import Logo from 'images/logo.png';
 // Constants
 
 // Styles
@@ -19,11 +19,11 @@ const SiteHeader = props => {
     <header className="site-header">
       <div className="site-header__container">
         <Link to="/" className="site-header__logo">
-          {/* <img src={Logo} alt="something" /> */}
+          <img src={Logo} alt="something" />
         </Link>
-        <h1 className="site-header__title">
-          React Application
-        </h1>
+    {/* <h1 className="site-header__title">
+      Artworx Services Locator
+      </h1> */}
       </div>
     </header>
   );

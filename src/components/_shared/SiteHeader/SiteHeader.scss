@@ -7,11 +7,19 @@
 }
 .site-header__container {
   @include container;
+  height: 100%;
+  max-width: none;
+  display: flex;
+  align-items: center;
 }
 .site-header__logo {
-  position: absolute;
-  top: 14px;
-  left: 40px;
+  // position: absolute;
+  // top: 14px;
+  // left: 40px;
+  img {
+    width: 170px;
+    height: 40px;
+  }
 }
 .site-header__title {
   font-family: $fontSerif;
