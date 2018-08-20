@@ -1,0 +1,14 @@
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+
+.utility-bar {
+  background-color: $colorGray-92;
+}
+
+.utility-bar__container {
+  @include container;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

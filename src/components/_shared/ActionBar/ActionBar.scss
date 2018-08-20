@@ -1,0 +1,35 @@
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+
+.action-bar {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-bar__secondary {
+  display: flex;
+
+  .button:not(:first-child) {
+    margin-left: 20px;
+  }
+  .cta-link:not(:first-child) {
+    margin-left: 40px;
+  }
+}
+
+.action-bar__primary {
+  display: flex;
+
+  .button:not(:last-child) {
+    margin-right: 20px;
+  }
+  .cta-link:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+
+
+

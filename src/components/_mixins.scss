@@ -1,0 +1,45 @@
+// Container
+// -------------------------------------------------------------------------- //
+@mixin container {
+  display: block;
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+// Fonts
+// -------------------------------------------------------------------------- //
+@mixin font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Borders
+// ----------------------------------------- //
+@mixin border-top {
+  border-top: 1px solid $colorGray-87;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $colorGray-87;
+}
+
+// Forms
+// -------------------------------------------------------------------------- //
+@mixin form-row {
+  margin-bottom: 20px;
+}
+
+@mixin form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: $fontSemiBold;
+  margin-bottom: 12px;
+}
+
+@mixin form-text-input {
+  font-size: $inputFontSize;
+  color: $colorText;
+  font-family: $fontSerif;
+}

@@ -1,0 +1,29 @@
+@import 'components/_vars.scss';
+
+.breadcrumbs {
+  display: flex;
+}
+.breadcrumbs__item {
+  &:last-child {
+    .breadcrumbs__chevron {
+      display: none;
+    }
+  }
+}
+.breadcrumbs__link {
+  font-weight: $fontSemiBold;
+  color: $colorPrimary;
+  font-size: 14px;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+
+  &.is-current {
+    color: $colorText;
+    text-transform: uppercase;
+  }
+}
+.breadcrumbs__chevron {
+  margin: 0 9px;
+  position: relative;
+  top: -1px;
+}

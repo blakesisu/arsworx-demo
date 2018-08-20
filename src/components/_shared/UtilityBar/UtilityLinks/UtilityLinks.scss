@@ -1,0 +1,18 @@
+@import 'components/_vars.scss';
+
+.utility-links {
+  display: flex;
+}
+.utility-links__item {
+  &:not(:first-child) {
+    margin-left: 40px;
+  }
+}
+.utility-links__link {
+  font-size: 14px;
+  font-weight: $fontSemiBold;
+  color: $colorPrimary;
+}
+.utility-links__link--secondary {
+  color: $colorGray-49;
+}

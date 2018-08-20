@@ -1,0 +1,39 @@
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+@import 'components/_reset.scss';
+
+html,
+body {
+  height: 100%;
+  font-size: $baseFontSize + 0px;
+  font-family: $fontSans;
+  color: $colorText;
+  background-color: $colorBg;
+  touch-action: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.site-container {
+  @include container;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.site__root--modal {
+  background-color: rgb(72, 72, 72);
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+}
+
+.site--modal {
+  pointer-events: none;
+  filter: brightness(5%);
+}

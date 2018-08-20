@@ -1,0 +1,21 @@
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+
+.page-header {
+  @include border-bottom;
+  padding: 0 0 30px;
+  margin-bottom: 30px;
+}
+.page-header__title {
+  font-size: 34px;
+  color: $colorPrimary;
+  font-weight: $fontLight;
+  letter-spacing: -0.015em;
+}
+.page-header__description {
+  font-size: 17px;
+  line-height: 1.7;
+  font-family: $fontSerif;
+  letter-spacing: 0.005em;
+  margin-top: 25px;
+}

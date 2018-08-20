@@ -1,0 +1,60 @@
+// Colors
+// -------------------------------------------------------------------------- //
+$colorWhite: #FFFFFF;
+$colorBlue: #707d92;
+$colorText: #393939;
+$colorBg: #F9FAF9;
+$colorPrimary: #cc5500;
+$colorPrimary-hover: #14706d;
+$colorFeatured: #1d7b5a;
+$colorFeatured-hover: #2c9570;
+$colorSuccess: #82b427;
+$colorWarning: #C85721;
+$colorError: #D60E0E;
+$colorGray-92: #EBEBEB;
+$colorGray-87: #DFDFDF;
+$colorGray-84: #D6D6D6;
+$colorGray-49: #7C7C7C;
+
+// Easing
+// -------------------------------------------------------------------------- //
+// In
+$easeInQuad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInQuart: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeInSine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+// Out
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeOutQuart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeOutSine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeOutCirc: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+// In Out
+$easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+// Fonts
+// -------------------------------------------------------------------------- //
+$fontSans: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$fontSerif: Georgia, Times, 'Times New Roman', serif;
+
+$fontLight: 300;
+$fontRegular: 400;
+$fontSemiBold: 600;
+$fontBold: 700;
+$baseFontSize: 17; // in pixels
+
+// Forms
+// -------------------------------------------------------------------------- //
+$inputHeight: 48px;
+$inputRadius: 3px;
+// font
+$inputFontSize: 17px;
+// colors
+$inputBorderColor: $colorGray-84;
+$inputEmptyColor: $colorGray-92;
+$inputFilledColor: $colorWhite;

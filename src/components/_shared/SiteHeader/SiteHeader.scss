@@ -1,0 +1,24 @@
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+
+.site-header {
+  background-color: $colorPrimary;
+  height: 55px;
+}
+.site-header__container {
+  @include container;
+}
+.site-header__logo {
+  position: absolute;
+  top: 14px;
+  left: 40px;
+}
+.site-header__title {
+  font-family: $fontSerif;
+  font-size: 18px;
+  color: $colorWhite;
+  text-align: center;
+  padding-top: 19px;
+  letter-spacing: 0.005em;
+  @include font-smooth;
+}
