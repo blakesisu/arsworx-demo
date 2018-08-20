@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 // Components
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
+import ExampleMap from 'components/_shared/Map/ExampleMap';
 
 // SVGs
 // Constants
@@ -50,7 +51,8 @@ export class Home extends React.Component {
     return (
       <div>
         <ErrorBoundary>
-          <p> Hi! </p>
+          <p> Sisu map testing! </p>
+          <ExampleMap />
         </ErrorBoundary>
       </div>
     );

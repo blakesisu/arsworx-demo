@@ -1,0 +1,13 @@
+// @import './../../../../node_modules/leaflet/dist/leaflet.css';
+@import 'components/_vars.scss';
+@import 'components/_mixins.scss';
+
+.example-map {
+  display: flex;
+  justify-content: center;
+}
+
+.leaflet-container {
+  width: 50%;
+  height: 400px;
+}

@@ -8,6 +8,7 @@ import { store, persistor, history } from './store/store';
 import App from './components/App';
 import registerServiceWorker from './services/registerServiceWorker';
 
+import 'leaflet/dist/leaflet.css';
 // Uncomment to purge redux localstorage
 // persistor.purge();
 
