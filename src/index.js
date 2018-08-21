@@ -27,9 +27,7 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
-        <div>
-          <App />
-        </div>
+        <App />
       </ConnectedRouter>
     </PersistGate>
   </Provider>,

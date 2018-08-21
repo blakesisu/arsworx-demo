@@ -35,7 +35,8 @@ class ExampleMap extends React.Component {
     this.state = {
       lat: 36.9741,
       lng: -122.0308,
-      zoom: 11
+      zoom: 13,
+      layers: ['grayscale']
     }
   }
 
@@ -74,12 +75,12 @@ class ExampleMap extends React.Component {
           provider.location.latitude
         ]}>
           <Popup>
-            <div key={provider.title} className={`provider`}>
-              <p>Name: {provider.title}</p>
-              <p>Address: {provider.location.address}</p>
+            <div key={provider.title} className={`provider-popup`}>
+              <p>{provider.title}</p>
+              <p>{provider.location.address}</p>
               <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
               <p>Telephone: {provider.phone}</p>
-              <p>Website: {provider.website}</p>
+              <a href={provider.website}>{provider.website}</a>
             </div>
           </Popup>
         </Marker>
@@ -100,11 +101,14 @@ class ExampleMap extends React.Component {
 
     return (
       <div className="example-map">
-        <LeafletMap center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-          />
+        <LeafletMap
+          center={position}
+          zoom={this.state.zoom}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            />
           {this.props.providers.length > 0 && this.createMarkers()}
         </LeafletMap>
       </div>

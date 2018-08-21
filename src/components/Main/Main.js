@@ -51,11 +51,11 @@ export class Home extends React.Component {
   renderProviders = () => {
     return this.props.providers.providers.map(provider => (
       <li key={provider.title} className={`provider`}>
-        <p>Name: {provider.title}</p>
-        <p>Address: {provider.location.address}</p>
-        <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
-        <p>Telephone: {provider.phone}</p>
-        <p>Website: {provider.website}</p>
+        <p className={`provider__title`}>{provider.title}</p>
+        <p className={`provider__address`}>{provider.location.address}</p>
+        <p className={`provider__hours`}>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
+        <p className={`provider__phone`}>Telephone: {provider.phone}</p>
+        <a href={`http://www.${provider.website}`} className={`provider__site`}>{provider.website}</a>
       </li>
     ))
   }
@@ -64,9 +64,19 @@ export class Home extends React.Component {
     return (
       <ErrorBoundary>
         <main className={`main`}>
-          <ul className={`providers-list`}>
-            { !this.props.providers.requesting && this.renderProviders() }
-          </ul>
+          <section className="providers">
+            <div className="providers__search">
+              <input className="providers__search-name" type="text" placeholder="Search by name"/>
+              <input className="providers__search-address" type="text" />
+            </div>
+            <div className="providers__results">
+              <div className="providers__results-title"><p>Providers</p></div>
+              <div className="providers__results-filters"><p>Filters</p></div>
+            </div>
+            <ul className={`providers__list`}>
+              { !this.props.providers.requesting && this.renderProviders() }
+            </ul>
+          </section>
           <ExampleMap providers={this.props.providers.providers}/>
         </main>
       </ErrorBoundary>
