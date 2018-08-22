@@ -3,49 +3,49 @@ import produce from 'immer';
 // Action types
 import { CALL_API } from 'store/middleware/api';
 import {
-  PROVIDERS_REQUEST,
-  PROVIDERS_SUCCESS,
-  PROVIDERS_ERROR
+  LOCATIONS_REQUEST,
+  LOCATIONS_SUCCESS,
+  LOCATIONS_ERROR
 } from 'constants/actionTypes';
 
 // Default State
 // ------------------------------------------------------- //
 const initialState = {
   requesting: false,
-  providers: []
+  location: []
 };
 
 // Reducers
 // ------------------------------------------------------- //
-export const providersReducer = produce((draft, action) => {
+export const locationsReducer = produce((draft, action) => {
   switch (action.type) {
-    case PROVIDERS_REQUEST:
+    case LOCATIONS_REQUEST:
       draft.requesting = true;
       return;
-    case PROVIDERS_SUCCESS:
+    case LOCATIONS_SUCCESS:
       draft.requesting = false;
-      draft.providers = action.payload;
+      draft.location = [action.payload];
       return;
-    case PROVIDERS_ERROR:
+    case LOCATIONS_ERROR:
       draft.requesting = false;
       return;
     default:
   }
 }, initialState);
 
-export default providersReducer;
+export default locationsReducer;
 
 // Action Creators
 // ------------------------------------------------------- //
 
 // Side Effects
 // ------------------------------------------------------- //
-export const fetchProviders = () => dispatch => {
+export const fetchLocations = () => dispatch => {
   return dispatch({
     [CALL_API]: {
-      endpoint: `providers.json`,
+      endpoint: `la_spa.json`,
       method: 'GET',
-      types: [PROVIDERS_REQUEST, PROVIDERS_SUCCESS, PROVIDERS_ERROR],
+      types: [LOCATIONS_REQUEST, LOCATIONS_SUCCESS, LOCATIONS_ERROR],
       authenticatedRequest: false,
       isMock: true,
     }

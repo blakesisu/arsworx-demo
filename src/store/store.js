@@ -11,16 +11,15 @@ import api from './middleware/api';
 export const history = createHistory();
 
 // Don't persists these parts of the state
-// const dbBlacklistFilter = createBlacklistFilter('reducer', [
-//   'some_sub_reducer.action',
-// ]);
+const dbBlacklistFilter = createBlacklistFilter('db', [
+  'user',
+]);
 
 const persistConfig = {
   key: 'root',
   storage,
   blacklist: ['routing', 'vendor'],
-  transforms: []
-  // transforms: [dbBlacklistFilter]
+  transforms: [dbBlacklistFilter]
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const initialState = {};

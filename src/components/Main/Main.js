@@ -16,6 +16,7 @@ const mapStateToProps = state => ({
   // requesting: state.api.requesting,
   // user: state.db.user,
   providers: state.db.providers,
+  locations: state.db.locations,
 });
 
 export class Home extends React.Component {
@@ -28,9 +29,15 @@ export class Home extends React.Component {
 
   // Constructor
   // ------------------------------------------------------------------------ //
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor() {
+    super()
+    // Santa Cruz is default location
+    this.state = {
+      lat: 36.9741,
+      lng: -122.0308,
+      zoom: 13
+    }
+  }
 
   // Variables
   // ------------------------------------------------------------------------ //
@@ -42,6 +49,21 @@ export class Home extends React.Component {
 
   // Event handlers
   // ------------------------------------------------------------------------ //
+  chooseProvider = (e, provider) => {
+    if (e) e.preventDefault();
+    this.setLocation({
+      lat: +provider.location.latitude,
+      lng: +provider.location.longitude
+    });
+  }
+
+  setLocation = locationData => {
+    const {lat, lng} = locationData;
+    this.setState({
+      lat,
+      lng
+    });
+  }
 
   // Class methods
   // ------------------------------------------------------------------------ //
@@ -50,7 +72,11 @@ export class Home extends React.Component {
   // ------------------------------------------------------------------------ //
   renderProviders = () => {
     return this.props.providers.providers.map(provider => (
-      <li key={provider.title} className={`provider`}>
+      <li
+        key={provider.title}
+        className={`provider`}
+        onClick={e => this.chooseProvider(e, provider)}
+      >
         <p className={`provider__title`}>{provider.title}</p>
         <p className={`provider__address`}>{provider.location.address}</p>
         <p className={`provider__hours`}>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
@@ -65,10 +91,10 @@ export class Home extends React.Component {
       <ErrorBoundary>
         <main className={`main`}>
           <section className="providers">
-            <div className="providers__search">
+            {/*<div className="providers__search">
               <input className="providers__search-name" type="text" placeholder="Search by name"/>
               <input className="providers__search-address" type="text" />
-            </div>
+            </div> */}
             <div className="providers__results">
               <div className="providers__results-title"><p>Providers</p></div>
               <div className="providers__results-filters"><p>Filters</p></div>
@@ -77,7 +103,11 @@ export class Home extends React.Component {
               { !this.props.providers.requesting && this.renderProviders() }
             </ul>
           </section>
-          <ExampleMap providers={this.props.providers.providers}/>
+          <ExampleMap
+            providers={this.props.providers.providers}
+            location={[ this.state.lat, this.state.lng ]}
+            setLocation={this.setLocation}
+            zoom={this.state.zoom}/>
         </main>
       </ErrorBoundary>
     );

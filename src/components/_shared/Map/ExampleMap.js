@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // react leaflet
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map as LeafletMap, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 
 // Components
@@ -21,6 +22,10 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
+const mapStateToProps = state => ({
+  geoData: state.db.locations.location,
+});
+
 class ExampleMap extends React.Component {
   // Prop Types
   // ------------------------------------------------------------------------ //
@@ -29,16 +34,15 @@ class ExampleMap extends React.Component {
 
   // Constructor
   // ------------------------------------------------------------------------ //
-  constructor() {
-    super()
-    // Santa Cruz is default location
-    this.state = {
-      lat: 36.9741,
-      lng: -122.0308,
-      zoom: 13,
-      layers: ['grayscale']
-    }
-  }
+  // constructor() {
+  //   super()
+  //   // Santa Cruz is default location
+  //   this.state = {
+  //     lat: 36.9741,
+  //     lng: -122.0308,
+  //     zoom: 13
+  //   }
+  // }
 
   // Variables
   // ------------------------------------------------------------------------ //
@@ -59,7 +63,7 @@ class ExampleMap extends React.Component {
     if ("geolocation" in navigator) {
       /* geolocation is available */
       navigator.geolocation.getCurrentPosition(position => {
-        this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
+        this.props.setLocation({ lat: position.coords.latitude, lng: position.coords.longitude});
       });
     } else {
       /* geolocation IS NOT available */
@@ -71,16 +75,16 @@ class ExampleMap extends React.Component {
     return this.props.providers.map(provider => {
       return (
         <Marker key={provider.phone} position={[
-          provider.location.longitude,
-          provider.location.latitude
+          provider.location.latitude,
+          provider.location.longitude
         ]}>
           <Popup>
             <div key={provider.title} className={`provider-popup`}>
-              <p>{provider.title}</p>
+              <p className={`provider-popup__title`}>{provider.title}</p>
               <p>{provider.location.address}</p>
               <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
               <p>Telephone: {provider.phone}</p>
-              <a href={provider.website}>{provider.website}</a>
+              <a href={`http://www.${provider.website}`} className={`provider-popup__site`}>{provider.website}</a>
             </div>
           </Popup>
         </Marker>
@@ -97,23 +101,25 @@ class ExampleMap extends React.Component {
   // Render methods
   // ------------------------------------------------------------------------ //
   render() {
-    const position = [this.state.lat, this.state.lng];
+    // const position = [this.state.lat, this.state.lng];
 
+    console.log('checkkkk', this.props)
     return (
       <div className="example-map">
         <LeafletMap
-          center={position}
-          zoom={this.state.zoom}
+          center={this.props.location}
+          zoom={this.props.zoom}
           >
             <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+              url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
             />
           {this.props.providers.length > 0 && this.createMarkers()}
+          <GeoJSON data={this.props.geoData} />
         </LeafletMap>
       </div>
     );
   }
 }
 
-export default ExampleMap;
+export default connect(mapStateToProps)(ExampleMap);

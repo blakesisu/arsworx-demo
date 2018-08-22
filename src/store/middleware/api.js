@@ -5,11 +5,15 @@ import axios from 'axios';
 import { delayPromise } from 'services/utils';
 import { persistor } from 'store/store';
 
-export const API_ROOT =
-  '<PRODUCTION_ADDRESS>';
-export const API_MOCK_ROOT =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5013/data/'
+export const API_ROOT = '<PRODUCTION_ADDRESS>';
+
+// use this development address if you want others to view in LAN
+// 'http://192.168.111.174:5013/data/'
+
+// use this development address if you want others to view localhost
+// 'http://localhost:5013/data/'
+export const API_MOCK_ROOT = process.env.NODE_ENV === 'development'
+    ? 'http://192.168.111.174:5013/data/'
     : '<STAGE_ADDRESS>/data/';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
