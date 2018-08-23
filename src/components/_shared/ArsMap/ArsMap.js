@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -10,7 +10,7 @@ import L from 'leaflet';
 // SVGs
 // Constants
 // Styles
-import './ExampleMap.css';
+import './ArsMap.css';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -26,7 +26,7 @@ const mapStateToProps = state => ({
   geoData: state.db.locations.location,
 });
 
-class ExampleMap extends React.Component {
+class ArsMap extends React.Component {
   // Prop Types
   // ------------------------------------------------------------------------ //
   static propTypes = {};
@@ -46,6 +46,7 @@ class ExampleMap extends React.Component {
 
   // Variables
   // ------------------------------------------------------------------------ //
+  mapRef = createRef()
 
   // Lifecycle methods
   // ------------------------------------------------------------------------ //
@@ -115,11 +116,11 @@ class ExampleMap extends React.Component {
               url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
             />
           {this.props.providers.length > 0 && this.createMarkers()}
-          <GeoJSON data={this.props.geoData} />
+          {/* <GeoJSON data={this.props.geoData} /> */}
         </LeafletMap>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(ExampleMap);
+export default connect(mapStateToProps)(ArsMap);

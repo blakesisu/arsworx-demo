@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // Components
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
-import ExampleMap from 'components/_shared/Map/ExampleMap';
+import ArsMap from 'components/_shared/ArsMap/ArsMap';
 
 // SVGs
 // Constants
@@ -103,7 +103,7 @@ export class Home extends React.Component {
               { !this.props.providers.requesting && this.renderProviders() }
             </ul>
           </section>
-          <ExampleMap
+          <ArsMap
             providers={this.props.providers.providers}
             location={[ this.state.lat, this.state.lng ]}
             setLocation={this.setLocation}
