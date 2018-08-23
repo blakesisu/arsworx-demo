@@ -56,15 +56,11 @@ class ArsMap extends React.Component {
 
   // Event handlers
   // ------------------------------------------------------------------------ //
-  handleClick = () => {
-    this.mapRef.current.leafletElement.locate()
-  }
-
-  handleLocationFound = e => {
-    this.setState({
-      hasLocation: true,
-      latlng: e.latlng,
-    })
+  handleClick = e => {
+    console.log('handleclick loc ', e, this.mapRef)
+    // this.mapRef.current.leafletElement.locate()
+    const { lat, lng } = e.latlng;
+    this.props.setLocation({ lat, lng});
   }
 
   // Class methods
@@ -112,9 +108,6 @@ class ArsMap extends React.Component {
   // Render methods
   // ------------------------------------------------------------------------ //
   render() {
-    // const position = [this.state.lat, this.state.lng];
-
-    console.log('checkkkk', this.props)
     const overlay = Object.keys(this.props.overlay).find(key => {
       return this.props.overlay[key];
     })
@@ -123,6 +116,8 @@ class ArsMap extends React.Component {
         <LeafletMap
           center={this.props.location}
           zoom={this.props.zoom}
+          ref={this.mapRef}
+          onClick={this.handleClick}
           >
             <TileLayer
               attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
