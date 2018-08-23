@@ -23,7 +23,7 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const mapStateToProps = state => ({
-  geoData: state.db.locations.location,
+  geoData: state.db.locations.locations,
 });
 
 class ArsMap extends React.Component {
@@ -56,6 +56,16 @@ class ArsMap extends React.Component {
 
   // Event handlers
   // ------------------------------------------------------------------------ //
+  handleClick = () => {
+    this.mapRef.current.leafletElement.locate()
+  }
+
+  handleLocationFound = e => {
+    this.setState({
+      hasLocation: true,
+      latlng: e.latlng,
+    })
+  }
 
   // Class methods
   // ------------------------------------------------------------------------ //
@@ -105,8 +115,11 @@ class ArsMap extends React.Component {
     // const position = [this.state.lat, this.state.lng];
 
     console.log('checkkkk', this.props)
+    const overlay = Object.keys(this.props.overlay).find(key => {
+      return this.props.overlay[key];
+    })
     return (
-      <div className="example-map">
+      <div className="arsmap">
         <LeafletMap
           center={this.props.location}
           zoom={this.props.zoom}
@@ -116,7 +129,7 @@ class ArsMap extends React.Component {
               url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
             />
           {this.props.providers.length > 0 && this.createMarkers()}
-          {/* <GeoJSON data={this.props.geoData} /> */}
+          {overlay && (<GeoJSON data={this.props.geoData[overlay + '_data']} />)}
         </LeafletMap>
       </div>
     );

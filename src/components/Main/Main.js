@@ -16,7 +16,6 @@ const mapStateToProps = state => ({
   // requesting: state.api.requesting,
   // user: state.db.user,
   providers: state.db.providers,
-  locations: state.db.locations,
 });
 
 export class Home extends React.Component {
@@ -33,6 +32,12 @@ export class Home extends React.Component {
     super()
     // Santa Cruz is default location
     this.state = {
+      options: false,
+      overlay: {
+        spa: false,
+        hood: false
+      },
+      refresh: false,
       lat: 36.9741,
       lng: -122.0308,
       zoom: 13
@@ -65,6 +70,26 @@ export class Home extends React.Component {
     });
   }
 
+  navigateDetails = e => {
+    // if (e) e.preventDefault();
+    // this.props.dispatch(push({'/details'}))
+  }
+
+  showOptions = e => {
+    // if (e) e.preventDefault();
+    this.setState({options: !this.state.options})
+  }
+
+  toggleCheckbox = (e, type) => {
+    // if (e) e.preventDefault();
+    this.setState({[type]: !this.state[type]})
+  }
+
+  toggleOverlay = (e, type) => {
+    // if (e) e.preventDefault();
+    this.setState({overlay: {[type]: !this.state.overlay[type]}})
+  }
+
   // Class methods
   // ------------------------------------------------------------------------ //
 
@@ -91,23 +116,67 @@ export class Home extends React.Component {
       <ErrorBoundary>
         <main className={`main`}>
           <section className="providers">
-            {/*<div className="providers__search">
-              <input className="providers__search-name" type="text" placeholder="Search by name"/>
-              <input className="providers__search-address" type="text" />
-            </div> */}
             <div className="providers__results">
               <div className="providers__results-title"><p>Providers</p></div>
-              <div className="providers__results-filters"><p>Filters</p></div>
+              <div
+                className={`
+                  providers__results-options
+                  ${this.state.options ? "providers__results-options--show" : ""}
+                  `}
+                onClick={this.showOptions}
+              >
+                <p>Options</p>
+              </div>
             </div>
-            <ul className={`providers__list`}>
-              { !this.props.providers.requesting && this.renderProviders() }
-            </ul>
+            { this.state.options ?
+              (<div className="providers__options">
+                <div className="providers__search">
+                  <h2>Search by name or Address</h2>
+                  <input className="providers__search-name" type="text" placeholder="Search by name"/>
+                  <input className="providers__search-address" type="text" />
+                </div>
+                <div className="providers__effects">
+                  <div className="providers__effect">
+                    <input type="checkbox" checked={this.state.refresh} onChange={e => this.toggleCheckbox(e, 'refresh')}/>
+                    <p>Refresh map when repositioned</p>
+                  </div>
+                  <div className="providers__effect">
+                    <input type="checkbox" checked={this.state.overlay.spa} onChange={e => this.toggleOverlay(e, 'spa')}/>
+                    <p>Show SPAs overlay</p>
+                  </div>
+                  <div className="providers__effect">
+                    <input type="checkbox" checked={this.state.overlay.hood} onChange={e => this.toggleOverlay(e, 'hood')}/>
+                    <p>Show hoods overlay</p>
+                  </div>
+                </div>
+                <div className="providers__filters">
+                  <div className="providers__filter">
+                    <input type="checkbox" checked={false} />
+                    <p>Non-profit</p>
+                  </div>
+                  <div className="providers__filter">
+                    <input type="checkbox" checked={false} />
+                    <p>Some filter</p>
+                  </div>
+                  <div className="providers__filter">
+                    <input type="checkbox" checked={false} />
+                    <p>Some filter</p>
+                  </div>
+
+                </div>
+              </div>)
+              :
+              (<ul className={`providers__list`}>
+                { !this.props.providers.requesting && this.renderProviders() }
+              </ul>)
+            }
           </section>
           <ArsMap
             providers={this.props.providers.providers}
             location={[ this.state.lat, this.state.lng ]}
             setLocation={this.setLocation}
-            zoom={this.state.zoom}/>
+            zoom={this.state.zoom}
+            overlay={this.state.overlay}/>
         </main>
       </ErrorBoundary>
     );

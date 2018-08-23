@@ -12,7 +12,7 @@ import {
 // ------------------------------------------------------- //
 const initialState = {
   requesting: false,
-  location: []
+  locations: {}
 };
 
 // Reducers
@@ -24,7 +24,7 @@ export const locationsReducer = produce((draft, action) => {
       return;
     case LOCATIONS_SUCCESS:
       draft.requesting = false;
-      draft.location = [action.payload];
+      draft.locations = action.payload;
       return;
     case LOCATIONS_ERROR:
       draft.requesting = false;
@@ -43,7 +43,7 @@ export default locationsReducer;
 export const fetchLocations = () => dispatch => {
   return dispatch({
     [CALL_API]: {
-      endpoint: `la_spa.json`,
+      endpoint: `geo_data/geo_datas.json`,
       method: 'GET',
       types: [LOCATIONS_REQUEST, LOCATIONS_SUCCESS, LOCATIONS_ERROR],
       authenticatedRequest: false,

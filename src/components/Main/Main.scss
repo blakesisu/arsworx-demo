@@ -41,12 +41,8 @@
     width: 70%;
     background-color: #ffffff;
     border-right: 1px solid #000000;
-    &:hover {
-      background-color: $colorPrimary;
-      color: #ffffff;
-    }
   }
-  .providers__results-filters {
+  .providers__results-options {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +53,51 @@
       color: #ffffff;
     }
   }
+  .providers__results-options--show {
+    background-color: $colorPrimary;
+    color: #ffffff;
+  }
 }
+
+
+.providers__options,
+.providers__filter,
+.providers__effects {
+  display: flex;
+  flex-direction: column;
+}
+
+.providers__effects {
+  justify-content: space-between;
+  .providers__effect {
+    display: flex;
+    flex-direction: row;
+    input {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+.providers__filters {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+  .providers__filter {
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+.providers__options {
+  & > * {
+    margin: 5px 5px 0 5px;
+    background-color: #ffffff;
+    padding: 30px 10px;
+  }
+}
+
 
 .provider {
   padding: 10px 0;
