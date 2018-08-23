@@ -9,7 +9,7 @@ import ArsMap from 'components/_shared/ArsMap/ArsMap';
 // SVGs
 // Constants
 // Styles
-import './Main.css';
+import './Directory.css';
 
 // Redux
 const mapStateToProps = state => ({
@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
   providers: state.db.providers,
 });
 
-export class Home extends React.Component {
+export class Directory extends React.Component {
   // Prop Types
   // ------------------------------------------------------------------------ //
   static propTypes = {
@@ -114,7 +114,7 @@ export class Home extends React.Component {
   render() {
     return (
       <ErrorBoundary>
-        <main className={`main`}>
+        <div className={`directory`}>
           <section className="providers">
             <div className="providers__results">
               <div className="providers__results-title"><p>Providers</p></div>
@@ -177,10 +177,10 @@ export class Home extends React.Component {
             setLocation={this.setLocation}
             zoom={this.state.zoom}
             overlay={this.state.overlay}/>
-        </main>
+        </div>
       </ErrorBoundary>
     );
   }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Directory);

@@ -1,15 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import { withRouter, Switch, Route } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import { push } from 'react-router-redux';
 
 // Components
-// import PrivateRoute from 'components/_shared/PrivateRoute/PrivateRoute';
 import SiteHeader from 'components/_shared/SiteHeader/SiteHeader';
-// import UtilityBar from 'components/_shared/UtilityBar/UtilityBar';
-import Main from 'components/Main/Main';
+import Directory from 'components/Directory/Directory';
+import Home from 'components/Home/Home';
+import Report from 'components/Report/Report';
+import AddMe from 'components/AddMe/AddMe';
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
 // SVGs
 // Constants
@@ -71,16 +71,18 @@ export class App extends React.Component {
   // ------------------------------------------------------------------------ //
   render() {
 
+    // <Main />
     return (
       <ErrorBoundary>
         <SiteHeader />
-        <Main />
-      {/* <main className={`main`}>
+        <main className={`main`}>
           <Switch>
-            <PrivateRoute exact path="/" component={Main} />
-            <PrivateRoute component={Main} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/directory" component={Directory} />
+            <Route exact path="/report" component={Report} />
+            <Route exact path="/add-me" component={AddMe} />
           </Switch>
-        </main> */}
+        </main>
       </ErrorBoundary>
     );
   }

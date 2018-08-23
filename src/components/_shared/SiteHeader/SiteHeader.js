@@ -21,9 +21,17 @@ const SiteHeader = props => {
         <Link to="/" className="site-header__logo">
           <img src={Logo} alt="something" />
         </Link>
-    {/* <h1 className="site-header__title">
-      Artworx Services Locator
-      </h1> */}
+        <div className="site-header__right">
+          <Link to="/directory" className="site-header__link">
+            <p>Directory</p>
+          </Link>
+          <Link to="/report" className="site-header__link">
+            <p>Report</p>
+          </Link>
+          <Link to="/add-me" className="site-header__link">
+            <p>Add Me</p>
+          </Link>
+        </div>
       </div>
     </header>
   );
