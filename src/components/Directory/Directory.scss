@@ -10,7 +10,7 @@
 
 .providers {
   width: 25%;
-  background-color: $colorGray-92;
+  // background-color: $colorGray-92;
   display: flex;
   flex-direction: column;
 }
@@ -18,45 +18,45 @@
 .providers__search {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  height: 110px;
+  padding: 20px;
+  height: 16%;
   justify-content: space-between;
   input {
+    padding-left: 20px;
     width: 100%;
-    height: 40px;
-    border-radius: 4px;
+    height: 55px;
+    font-size: 16px;
+    border-radius: 3px;
   }
 }
 
 .providers__results {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 5%;
   width: 100%;
-  color: $colorPrimary;
+  padding: 0 20px;
+  background-color: $colorGray-92;
+  border-bottom: 1px solid $colorGray-87;
   .providers__results-title {
-    padding-left: 10px;
     display: flex;
     align-items: center;
-    width: 70%;
-    background-color: #ffffff;
-    border-right: 1px solid #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   .providers__results-options {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 30%;
-    background-color: #ffffff;
-    &:hover {
-      background-color: $colorPrimary;
-      color: #ffffff;
+    color: $colorPrimary;
+    p {
+      font-weight: $fontBold;
     }
   }
-  .providers__results-options--show {
-    background-color: $colorPrimary;
-    color: #ffffff;
-  }
+  // .providers__results-options--show {
+  //   background-color: $colorPrimary;
+  //   color: #ffffff;
+  // }
 }
 
 
@@ -99,27 +99,38 @@
 }
 
 
-.provider {
-  padding: 10px 0;
-  padding-left: 10px;
-  margin: 5px;
-  border-bottom: 1px solid #ffffff;
-  border-radius: 3px;
+.provider__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $colorGray-87;
+  padding: 20px;
+  height: 100%;
+  position: relative;
 
-  background-color: $colorGray-49;
-  & > * {
-    padding: 3px 0;
-    font-size: 14px;
+  .provider {
+    & > * {
+      padding: 3px 0;
+      font-size: 14px;
+    }
+    .provider__title {
+      font-size: 19px;
+      color: $colorPrimary;
+      font-weight: $fontBold;
+    }
+
+    .provider__title,
+    .provider__phone {
+      margin-bottom: 5px;
+    }
   }
-  .provider__title {
-    font-size: 19px;
-    color: #ffffff;
-  }
-  .provider__site {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  &:hover {
-    background-color: $colorGray-84;
+
+  .provider__verified {
+    display: flex;
+    flex-direction: column;
+    img {
+      margin-top: auto;
+    }
   }
 }
+

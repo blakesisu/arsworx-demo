@@ -7,6 +7,7 @@ import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
 import ArsMap from 'components/_shared/ArsMap/ArsMap';
 
 // SVGs
+import Verified from "images/verified.png"
 // Constants
 // Styles
 import './Directory.css';
@@ -99,14 +100,17 @@ export class Directory extends React.Component {
     return this.props.providers.providers.map(provider => (
       <li
         key={provider.title}
-        className={`provider`}
+        className={`provider__container`}
         onClick={e => this.chooseProvider(e, provider)}
       >
-        <p className={`provider__title`}>{provider.title}</p>
-        <p className={`provider__address`}>{provider.location.address}</p>
-        <p className={`provider__hours`}>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
-        <p className={`provider__phone`}>Telephone: {provider.phone}</p>
-        <a href={`http://www.${provider.website}`} className={`provider__site`}>{provider.website}</a>
+        <div className="provider">
+          <p className={`provider__title`}>{provider.title}</p>
+          <p className={`provider__address`}>{provider.location.address}</p>
+          <p className={`provider__city`}>{provider.location.city}</p>
+          <p className={`provider__phone`}>{provider.phone}</p>
+          <p className={`provider__hours`}>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
+        </div>
+        {provider.verified ? <div className="provider__verified"><img src={Verified} alt="verified"/></div> : null}
       </li>
     ))
   }
@@ -116,8 +120,12 @@ export class Directory extends React.Component {
       <ErrorBoundary>
         <div className={`directory`}>
           <section className="providers">
+            <div className="providers__search">
+              <input className="providers__search-name" type="text" placeholder="Search by Organization Name"/>
+              <input className="providers__search-address" type="text" />
+            </div>
             <div className="providers__results">
-              <div className="providers__results-title"><p>Providers</p></div>
+              <div className="providers__results-title"><p>Search Results</p></div>
               <div
                 className={`
                   providers__results-options
@@ -125,16 +133,11 @@ export class Directory extends React.Component {
                   `}
                 onClick={this.showOptions}
               >
-                <p>Options</p>
+                <p>Filters</p>
               </div>
             </div>
             { this.state.options ?
               (<div className="providers__options">
-                <div className="providers__search">
-                  <h2>Search by name or Address</h2>
-                  <input className="providers__search-name" type="text" placeholder="Search by name"/>
-                  <input className="providers__search-address" type="text" />
-                </div>
                 <div className="providers__effects">
                   <div className="providers__effect">
                     <input type="checkbox" checked={this.state.refresh} onChange={e => this.toggleCheckbox(e, 'refresh')}/>

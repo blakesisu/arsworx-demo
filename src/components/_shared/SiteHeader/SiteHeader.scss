@@ -2,7 +2,7 @@
 @import 'components/_mixins.scss';
 
 .site-header {
-  background-color: $colorPrimary;
+  background-color: $colorBlack;
   height: 55px;
 }
 .site-header__container {
@@ -13,20 +13,35 @@
   align-items: center;
   justify-content: space-between;
 }
-.site-header__right {
+.site-header__right,
+.site-header__left {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 20%;
+}
+
+.site-header__right {
+  width: 40%;
   a {
     text-decoration: none;
-    color: #000000;
+    color: $colorWhite;
     p {
-      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
   }
 }
+
+.site-header__left {
+  width: 35%;
+  color: $colorWhite;
+  h2 {
+    font-size: $medFontSize;
+    font-weight: $fontBold;
+  }
+}
+
 .site-header__logo {
   img {
     width: 170px;

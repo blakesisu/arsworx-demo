@@ -5,10 +5,8 @@
 html,
 body {
   height: 100%;
-  font-size: $baseFontSize + 0px;
-  font-family: $fontSans;
-  color: $colorText;
-  background-color: $colorBg;
+  font-size: $baseFontSize;
+  font-family: $regular;
   touch-action: auto;
 }
 

@@ -8,6 +8,7 @@ import L from 'leaflet';
 
 // Components
 // SVGs
+import Sisu from 'images/sisu.png';
 // Constants
 // Styles
 import './ArsMap.css';
@@ -25,6 +26,10 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const mapStateToProps = state => ({
   geoData: state.db.locations.locations,
 });
+
+const providerImages = {
+  sisu: Sisu
+};
 
 class ArsMap extends React.Component {
   // Prop Types
@@ -86,12 +91,18 @@ class ArsMap extends React.Component {
           provider.location.longitude
         ]}>
           <Popup>
-            <div key={provider.title} className={`provider-popup`}>
-              <p className={`provider-popup__title`}>{provider.title}</p>
-              <p>{provider.location.address}</p>
-              <p>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
-              <p>Telephone: {provider.phone}</p>
-              <a href={`http://www.${provider.website}`} className={`provider-popup__site`}>{provider.website}</a>
+            <div className="provider-popup__container">
+
+              {provider.image ? 
+                <div className="provider__image"><img src={providerImages[provider.image]} alt="provider image"/></div> : null}
+              <div key={provider.title} className={`provider-popup`}>
+                <p className={`provider-popup__title`}>{provider.title}</p>
+                <p className={`provider-popup__address`}>{provider.location.address}</p>
+                <p className={`provider-popup__city`}>{provider.location.city}</p>
+                <p className={`provider-popup__phone`}>{provider.phone}</p>
+                <p className={`provider-popup__hours`}>Hours: {`${provider.hours.opens} - ${provider.hours.closes}`}</p>
+                <a href={`http://www.${provider.website}`} className={`provider-popup__site`}>{provider.website}</a>
+              </div>
             </div>
           </Popup>
         </Marker>
