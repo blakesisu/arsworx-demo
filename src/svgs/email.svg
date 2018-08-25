@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 16" width="21" height="16">
+	<defs>
+		<image width="45" height="38" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NSAzOCIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjM4Ij4KCTxzdHlsZT4KCQl0c3BhbiB7IHdoaXRlLXNwYWNlOnByZSB9CgkJLnNocDAgeyBmaWxsOiBub25lO3N0cm9rZTogIzIyMWYxZjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOiAyIH0gCgk8L3N0eWxlPgoJPGcgaWQ9IlBhZ2UgMSI+CgkJPHBhdGggaWQ9IlBhdGggMSIgY2xhc3M9InNocDAiIGQ9Ik0zOC43OCAzNS45Mkw2LjI1IDM1LjkyQzMuOTUgMzUuOTIgMi4wOCAzNC4wNSAyLjA4IDMxLjc1TDIuMDggNi43NUMyLjA4IDQuNDUgMy45NSAyLjU4IDYuMjUgMi41OEwzOC43OCAyLjU4QzQxLjA5IDIuNTggNDIuOTUgNC40NSA0Mi45NSA2Ljc1TDQyLjk1IDMxLjc1QzQyLjk1IDM0LjA1IDQxLjA5IDM1LjkyIDM4Ljc4IDM1LjkyWk0zLjA3IDMuNTdMMjIuNTIgMjAuOTJMNDEuOTYgMy41NyIgLz4KCTwvZz4KPC9zdmc+"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="email icon" href="#img1" transform="matrix(0.971,0,0,0.889,0,0)"/>
+</svg>
