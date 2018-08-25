@@ -2,7 +2,8 @@
   {
     "title": "artworxLA",
     "location": {
-      "address": "1930 Wilshire Blvd #800, Los Angeles, CA 90057",
+      "address": "1930 Wilshire Blvd #800",
+      "city": "Los Angeles, CA 90057",
       "latitude": "34.0566",
       "longitude": "-118.2741"
     },
@@ -12,12 +13,14 @@
     },
     "phone": "3234651404",
     "image": "",
-    "website": "artworxla.org"
+    "website": "artworxla.org",
+    "verified": true
   },
   {
     "title": "Safe Place for Youth",
     "location": {
-      "address": "2469 S Lincoln Blvd, Venice, CA 90291",
+      "address": "2469 S Lincoln Blvd",
+      "city": "Venice, CA 90291",
       "latitude": "33.9926",
       "longitude": "-118.4507"
     },
@@ -26,12 +29,15 @@
       "closes": "5pm"
     },
     "phone": "3109022283",
-    "website": "safeplaceforyouth.org"
+    "image": "",
+    "website": "safeplaceforyouth.org",
+    "verified": true
   },
   {
     "title": "Sisu Media",
     "location": {
-      "address": "6100 Wilshire Blvd #1111, Los Angeles, CA 90048",
+      "address": "6100 Wilshire Blvd #1111",
+      "city": "Los Angeles, CA 90048",
       "latitude": "34.0626",
       "longitude": "-118.3618"
     },
@@ -40,6 +46,8 @@
       "closes": "6:30pm"
     },
     "phone": "3102870290",
-    "website": "sisumedia.com"
+    "image": "sisu",
+    "website": "sisumedia.com",
+    "verified": false
   }
 ]
