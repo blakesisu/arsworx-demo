@@ -3,14 +3,13 @@
 
 .directory {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
 }
 
 .providers {
   width: 25%;
-  // background-color: $colorGray-92;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -18,8 +17,8 @@
 .providers__search {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  height: 16%;
+  padding: 30px;
+  height: 25%;
   justify-content: space-between;
   input {
     padding-left: 20px;
@@ -34,7 +33,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 5%;
+  height: 7%;
   width: 100%;
   padding: 0 20px;
   background-color: $colorGray-92;
@@ -90,6 +89,11 @@
   }
 }
 
+.providers__options,
+.providers__list {
+  height: 68%;
+}
+
 .providers__options {
   & > * {
     margin: 5px 5px 0 5px;
@@ -98,6 +102,9 @@
   }
 }
 
+.providers__list {
+  overflow: auto;
+}
 
 .provider__container {
   display: flex;
@@ -105,7 +112,6 @@
   justify-content: space-between;
   border-bottom: 1px solid $colorGray-87;
   padding: 20px;
-  height: 100%;
   position: relative;
 
   .provider {

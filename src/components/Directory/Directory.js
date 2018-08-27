@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 // Components
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
 import ArsMap from 'components/_shared/ArsMap/ArsMap';
+import ProviderFilter from 'components/Directory/ProviderFilter/ProviderFilter';
 
 // SVGs
 import Verified from "images/verified.png"
@@ -39,6 +40,14 @@ export class Directory extends React.Component {
         hood: false
       },
       refresh: false,
+      filters: {
+        organizationFilters: [],
+        creativeFilters: [],
+        pipelineFilters: [],
+        agesFilters: [],
+        populationsFilters: [],
+        individualsFilters: [],
+      },
       lat: 36.9741,
       lng: -122.0308,
       zoom: 13
@@ -91,6 +100,30 @@ export class Directory extends React.Component {
     this.setState({overlay: {[type]: !this.state.overlay[type]}})
   }
 
+  handleFilter = (e, filterCandidate) => {
+    if (e) e.preventDefault();
+    let status;
+
+    let filters = [ ...this.state.filters[filterCandidate.type + 'Filters' ] ];
+
+    if (filters.indexOf(filterCandidate.filter) > -1) {
+      filters = filters.filter(fltr => fltr !== filterCandidate.filter);
+      // status = false;
+    } else {
+      filters = filters.push(filterCandidate.filter)
+      // status = true;
+    }
+
+    this.setState({
+      filters : {
+        [filterCandidate.type + 'Filters' ]: filters
+      }
+    }, () => {
+      // do actions to filters
+      console.log('filter handled', this.state);
+    });
+  }
+
   // Class methods
   // ------------------------------------------------------------------------ //
 
@@ -137,37 +170,14 @@ export class Directory extends React.Component {
               </div>
             </div>
             { this.state.options ?
-              (<div className="providers__options">
-                <div className="providers__effects">
-                  <div className="providers__effect">
-                    <input type="checkbox" checked={this.state.refresh} onChange={e => this.toggleCheckbox(e, 'refresh')}/>
-                    <p>Refresh map when repositioned</p>
-                  </div>
-                  <div className="providers__effect">
-                    <input type="checkbox" checked={this.state.overlay.spa} onChange={e => this.toggleOverlay(e, 'spa')}/>
-                    <p>Show SPAs overlay</p>
-                  </div>
-                  <div className="providers__effect">
-                    <input type="checkbox" checked={this.state.overlay.hood} onChange={e => this.toggleOverlay(e, 'hood')}/>
-                    <p>Show hoods overlay</p>
-                  </div>
-                </div>
-                <div className="providers__filters">
-                  <div className="providers__filter">
-                    <input type="checkbox" checked={false} />
-                    <p>Non-profit</p>
-                  </div>
-                  <div className="providers__filter">
-                    <input type="checkbox" checked={false} />
-                    <p>Some filter</p>
-                  </div>
-                  <div className="providers__filter">
-                    <input type="checkbox" checked={false} />
-                    <p>Some filter</p>
-                  </div>
-
-                </div>
-              </div>)
+              (<ProviderFilter
+                  refresh={this.state.refresh}
+                  overlayData={this.state.overlay}
+                  toggleOverlay={this.toggleOverlay}
+                  toggleCheckbox={this.toggleCheckbox}
+                  handleFilter={this.handleFilter}
+                  filters={this.state.filters}
+                />)
               :
               (<ul className={`providers__list`}>
                 { !this.props.providers.requesting && this.renderProviders() }

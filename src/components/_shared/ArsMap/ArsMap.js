@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // react leaflet
 import { Map as LeafletMap, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
@@ -39,15 +39,6 @@ class ArsMap extends React.Component {
 
   // Constructor
   // ------------------------------------------------------------------------ //
-  // constructor() {
-  //   super()
-  //   // Santa Cruz is default location
-  //   this.state = {
-  //     lat: 36.9741,
-  //     lng: -122.0308,
-  //     zoom: 13
-  //   }
-  // }
 
   // Variables
   // ------------------------------------------------------------------------ //

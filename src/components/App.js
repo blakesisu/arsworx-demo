@@ -10,6 +10,8 @@ import Directory from 'components/Directory/Directory';
 import Home from 'components/Home/Home';
 import Report from 'components/Report/Report';
 import AddMe from 'components/AddMe/AddMe';
+import Banner from 'components/Banner/Banner';
+import Footer from 'components/Footer/Footer';
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
 // SVGs
 // Constants
@@ -73,17 +75,27 @@ export class App extends React.Component {
 
     // <Main />
     return (
-      <ErrorBoundary>
-        <SiteHeader />
-        <main className={`main`}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/directory" component={Directory} />
-            <Route exact path="/report" component={Report} />
-            <Route exact path="/add-me" component={AddMe} />
-          </Switch>
-        </main>
-      </ErrorBoundary>
+      <div className="artworx-app">
+        <ErrorBoundary>
+          <SiteHeader />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <main className={`main`}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/directory" component={Directory} />
+              <Route exact path="/report" component={Report} />
+              <Route exact path="/add-me" component={AddMe} />
+            </Switch>
+          </main>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Banner />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Footer />
+        </ErrorBoundary>
+      </div>
     );
   }
 }
