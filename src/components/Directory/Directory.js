@@ -101,22 +101,24 @@ export class Directory extends React.Component {
   }
 
   handleFilter = (e, filterCandidate) => {
-    if (e) e.preventDefault();
+    // if (e) e.preventDefault();
     let status;
 
-    let filters = [ ...this.state.filters[filterCandidate.type + 'Filters' ] ];
+    console.log('handleFilter', filterCandidate)
+    let type = filterCandidate.type + 'Filters';
+    let typeFilter = [ ...this.state.filters[type] ];
 
-    if (filters.indexOf(filterCandidate.filter) > -1) {
-      filters = filters.filter(fltr => fltr !== filterCandidate.filter);
+    if (typeFilter.indexOf(filterCandidate.filter) > -1) {
+      typeFilter = typeFilter.filter(fltr => fltr !== filterCandidate.filter);
       // status = false;
     } else {
-      filters = filters.push(filterCandidate.filter)
+      typeFilter = typeFilter.concat(filterCandidate.filter)
       // status = true;
     }
 
     this.setState({
       filters : {
-        [filterCandidate.type + 'Filters' ]: filters
+        [type]: typeFilter
       }
     }, () => {
       // do actions to filters
