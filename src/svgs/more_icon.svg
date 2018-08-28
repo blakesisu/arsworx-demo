@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><path id="1785a" d="M352 592v-2h7v-7h2v7h7v2h-7v7h-2v-7z"/></defs><g><g transform="translate(-352 -583)"><use xlink:href="#1785a"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" width="17" height="17">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #000000 } 
+	</style>
+	<g id="more icon">
+		<path id="more icon" class="shp0" d="M16,9v-2h-16v2zM7,16h2v-16h-2z" />
+	</g>
+</svg>

@@ -51,58 +51,22 @@
     p {
       font-weight: $fontBold;
     }
-  }
-  // .providers__results-options--show {
-  //   background-color: $colorPrimary;
-  //   color: #ffffff;
-  // }
-}
-
-
-.providers__options,
-.providers__filter,
-.providers__effects {
-  display: flex;
-  flex-direction: column;
-}
-
-.providers__effects {
-  justify-content: space-between;
-  .providers__effect {
-    display: flex;
-    flex-direction: row;
-    input {
-      margin-right: 10px;
+    &:after {
+      margin-left: 5px;
+      content: url('./../../images/chev-down.png')
     }
   }
-}
-
-
-.providers__filters {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: center;
-  .providers__filter {
-    align-items: center;
-    padding: 10px;
+  .providers__results-options--show:after {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 
-.providers__options,
 .providers__list {
   height: 68%;
-}
-
-.providers__options {
-  & > * {
-    margin: 5px 5px 0 5px;
-    background-color: #ffffff;
-    padding: 30px 10px;
-  }
-}
-
-.providers__list {
   overflow: auto;
 }
 
@@ -139,4 +103,3 @@
     }
   }
 }
-

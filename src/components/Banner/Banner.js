@@ -3,6 +3,7 @@ import React from 'react';
 
 // Components
 // import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
+import Button from 'components/_shared/Button/Button';
 // SVGs
 // Constants
 import './Banner.css';
@@ -33,13 +34,18 @@ export default class Banner extends React.Component {
 
   // Render methods
   // ------------------------------------------------------------------------ //
+
+  // <div className="banner__button">
+  //   <a href="#">Learn How I can Help</a>
+  // </div>
   render() {
     return (
       <div className="banner">
         <h1>We're all in this together.</h1>
-        <div className="banner__button">
-          <a href="#">Learn How I can Help</a>
-        </div>
+        <Button 
+          className="banner__button"
+          value="Learn How I can Help"
+        />
       </div>
     );
   }

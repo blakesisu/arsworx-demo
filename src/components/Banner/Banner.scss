@@ -8,23 +8,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  // background-color: $colorPrimary;
-  background-image: url('./../../images/banner.png');
+  background: linear-gradient( rgba(0,0,0,0.6), rgba(0, 0, 0, 0.6) ),url(./../../images/banner.png) no-repeat;
+  background-size:cover;
   color: $colorWhite;
   h1 {
     font-size: 70px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
   }
 }
 
 .banner__button {
-  @include button;
   width: 240px;
   height: 55px;
   border-radius: 28px;
   background-color: blue;
-  a {
-    text-decoration: none;
-    color: $colorWhite;
-  }
+  color: $colorWhite;
 }
 

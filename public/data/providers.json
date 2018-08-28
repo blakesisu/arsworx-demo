@@ -1,6 +1,6 @@
 [
   {
-    "title": "artworxLA",
+    "organization": "artworxLA",
     "location": {
       "address": "1930 Wilshire Blvd #800",
       "city": "Los Angeles, CA 90057",
@@ -17,7 +17,7 @@
     "verified": true
   },
   {
-    "title": "Safe Place for Youth",
+    "organization": "Safe Place for Youth",
     "location": {
       "address": "2469 S Lincoln Blvd",
       "city": "Venice, CA 90291",
@@ -34,7 +34,7 @@
     "verified": true
   },
   {
-    "title": "Sisu Media",
+    "organization": "Sisu Media",
     "location": {
       "address": "6100 Wilshire Blvd #1111",
       "city": "Los Angeles, CA 90048",
@@ -48,6 +48,192 @@
     "phone": "3102870290",
     "image": "sisu",
     "website": "sisumedia.com",
+    "verified": false
+  },
+  {
+    "timestamp": "2018/07/18 12:55:43 PM MDT",
+    "organization": "Armory Center for the Arts",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Armory Community Program; Armory Schools Program; Art High",
+    "creative_sector": "arts galleries;communication arts;digital media;entertainment;fine and performing arts school;publishing and printing;visual and performing arts providers",
+    "pipeline": "INSTRUCTION: increase students' interest, abilities and skills in the creative arts;RE-ENGAGEMENT: reconnect young people to their education and their future through the creative arts;PLACEMENT: connect young people to workforce opportunities in the creative industries",
+    "overview": "At the core of our mission is a deep commitment to social justice through arts education. Every day, our teaching artists transform lives and communities through the power of art. They teach year-round studio art classes for all ages at our Old Pasadena facility. They collaborate with incarcerated teens to create murals inside juvenile detention camps. They instruct graphic design workshops at continuation high schools in Boyle Heights. They help public school teachers integrate art with math to excite imaginations and inspire critical thinking. They deliver free art classes at low-income elementary schools, inner-city parks, and recreation centers���mentoring some our most vulnerable community members. \n\nCommunity Arts Program:\nThe Armory�۪s mission is to build on the power of art to transform lives and communities through creating, teaching and presenting the arts. In the community the Armory has provided a wide range of programming for students of all ages since 1983. Classes are taught by professionally trained teaching artists committed to creating safe, supportive environments in which students can have fun learning experiences about contemporary art, while developing their artistic skills and exploring stimulating ideas.\n\nArmory Schools Program:\nThe Armory is committed to delivering innovative, sequential and standards-based visual art programs to K-12 schools. We place professional teaching artists directly into schools through customized residencies. These programs may happen during the school day in selected classrooms or throughout a school. Our School Programs link visual arts with other curricular areas such as language arts, math, and sciences in ways that are authentic, multilayered and complex. The interdisciplinary focus promotes learning by providing students with opportunities to solve problems, and with meaningful connections within the arts and across the curriculum.\n\nArt High:\nSince 2006, the Armory�۪s Art High programs have made free after school art classes and mentorship opportunities readily accessible to local teens at parks, schools, and community centers throughout the region.",
+    "ages_served": "All ages/no age restrictions",
+    "populations_served": "Incarcerated youth;No restrictions/all populations served",
+    "individuals_served": "501-1000",
+    "community_served": "Eastside (Boyle Heights, East Los Angeles, Lincoln Heights);Pasadena;County of Los Angeles;Altadena",
+    "contact": "145 North Raymond Avenue\nPasadena, California 91103\n626.792.5101",
+    "more_information": "http://www.armoryarts.org/",
+    "interviewed": "Yes",
+    "location": {
+      "address": "145 North Raymond Avenue",
+      "city": "Pasadena, California 91103",
+      "latitude": "34.148128",
+      "longitude": "-118.149011"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "6267925101",
+    "image": "",
+    "website": "www.armoryarts.org/",
+    "verified": true
+  },
+  {
+    "timestamp": "2018/07/18 1:39:23 PM MDT",
+    "organization": "Inner-City Arts",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Learning and Achieving in the Arts; Visual, Media and Performing Arts Institutes; Artists in the Middle; Work of Art",
+    "creative_sector": "architecture/interior design;arts galleries;communication arts;digital media;entertainment;fashion;fine and performing arts school;furniture/decorative arts;industrial design services;publishing and printing;visual and performing arts providers",
+    "pipeline": "INSTRUCTION: increase students' interest, abilities and skills in the creative arts;EXPOSURE: introduce students to career opportunities in the creative industries;PLACEMENT: connect young people to workforce opportunities in the creative industries;INTERNSHIPS: provide internship to young people in the creative industries",
+    "overview": "Inner-City Arts envisions a society that honors the human capacity for creativity, and values its cultivation in the education of young people. Our mission is to engage young people in the creative process in order to shape a society of creative, confident and collaborative individuals. \n\nLearning and Achieving through the Arts:\nIn a unique partnership with the Los Angeles Unified School District and local charter schools, elementary and middle school students and their classroom teachers are brought to the Inner-City Arts campus for experiential instruction in the visual and performing arts during their school day.\n\nTwice a week, for seven- or eight-week sessions, students and teachers work with Inner-City Arts teaching artists, focusing on a specific art form���visual arts, ceramics, music, dance, drama, digital photography or animation.\n\nVisual, Media & Performing Arts Institutes: \nInner-City Arts' Visual, Media & Performing Arts Institutes offer self-select after-school and weekend workshops to middle and high school students. Every workshop, no matter the art form, provides students with a valuable opportunity for creative exploration, performance, individual and group study, connections to mentorship opportunities, and career-development support.\n\nArtists in the Middle:\nThe Artists in the Middle program provides fun and engaging workshops intended to expose rising 6th, 7th and 8th grade students to a variety of arts taught by our professional teaching artists during the summer.\n\nTwo three-week summer sessions are offered, providing young artists the opportunity to participate in four different art forms of their choosing.\n\nWork of Art:\nWork of Art is a college and career exploration program designed to prepare teens with the skills, training, and real-world experience necessary to prepare them for life beyond high school. Eligible teens are high school students enrolled in the Middle and High School Visual, Media & Performing Arts Institutes program, have an interest in exploring a career in the creative economy, and a desire for mentorship.",
+    "ages_served": "5-10;11-13;14;15;16;17;18",
+    "populations_served": "Low-income students;English learners, students of color",
+    "individuals_served": "more than 1000",
+    "community_served": "Central Los Angeles (Hollywood, Mid-City, Mid-Wilshire, Downtown, Koreatown, Pico-Union);Eastside (Boyle Heights, East Los Angeles, Lincoln Heights);Northeast Los Angeles (Highland Park, Eagle Rock, Glassel Park);South Los Angeles (Watts, Jefferson Park, Hyde Park, Historic South-Central, Baldwin Hills/Crenshaw);Southeast Los Angeles (Montebello, Huntington Park, Pico Rivera, Norwalk)",
+    "contact": "720 Kohler Street\nLos Angeles, CA 90021\n(213) 627-9621",
+    "more_information": "http://inner-cityarts.org/",
+    "interviewed": "Yes",
+    "location": {
+      "address": "720 Kohler Street",
+      "city": "Los Angeles, CA 90021",
+      "latitude": "34.037004",
+      "longitude": "-118.242907"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "2136279621",
+    "image": "",
+    "website": "inner-cityarts.org",
+    "verified": true
+  },
+  {
+    "timestamp": "2018/07/18 2:04:56 PM MDT",
+    "organization": "Hollywood CPR",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Training Program (After School Track & Career Track)",
+    "creative_sector": "digital media;entertainment;fashion;furniture/decorative arts",
+    "pipeline": "INSTRUCTION: increase students' interest, abilities and skills in the creative arts;EXPOSURE: introduce students to career opportunities in the creative industries;RE-ENGAGEMENT: reconnect young people to their education and their future through the creative arts;WORKFORCE READINESS: teach soft skills required for success in the creative industries;CERTIFICATION: provide certificate or degree indicating readiness for workforce opportunities in creative industries",
+    "overview": "The mission of Hollywood CPR is to offer under-represented individuals opportunities to gain knowledge through hands-on training in marketable trade skills and guidance in work habits as they relate to the art, crafts and technicians departments of the entertainment industry. \n\nTraining Program:\nHollywood Cinema Production Resources' Training Program provides industry-specific training in marketable trade skills to under-served students in what is expected of an entry-level person in the art, crafts and technicians departments of film and television. Hollywood CPR's training provides qualified students a unique opportunity to learn these specialized craft and trade skills from the industry professionals who are masters in their trade.\n\nThe classes offered cover a broad spectrum of the entertainment industry's art department and stage crafts needs, focusing on the most important and common skill applications expected of an entry-level worker. Hollywood CPR's training program also incorporates broad-based life skills coaching and support that focus on the myriad of social skills necessary for success in gaining and keeping employment. Students earn college credit (through a collaboration with West Los Angeles College).\n\nAfter School Track:\nThe After School Track is intended to allow young people ages fifteen to eighteen to experience various aspects of the crafts of the entertainment industry. Each session begins with a hands-on orientation to all aspects of the crafts and its application to the entertainment industry. Students then spend time with different instructors and have opportunities to learn and discover their areas of interest through fun and creative projects. The after school program helps youth develop passion for the arts, opens the door to the possible careers in the industry, and provides students with the skills required to perform them. Students gain a foundation and learn the basics of art and technical aspects of film as applied to various areas of the entertainment industry crafts. After completion of this course, students will have an understanding of what kind of work is required for each type of craft. Having a strong foundation gives students depth of knowledge and the experience to be flexible for various career opportunities, and insight into the types of crafts, which are the most rewarding for them.\n\nCareer Track:\nThe Career Track is a specifically focused training program offering a first-of-its-kind opportunity for students to study with industry professionals in a range of areas including stagecraft, set lighting, costume manufacturing, set painting, etc.",
+    "ages_served": "15;16;17;18;19-24;24+",
+    "populations_served": "Low-income students;Students enrolled in a postsecondary institution",
+    "individuals_served": "101-500",
+    "community_served": "Westside (Mar Vista, Venice, Westwood, Palms, Brentwood);City of Los Angeles",
+    "contact": "Hollywood Cinema Production Resources\nP.O. Box 88459\nLos Angeles, CA 90009-8459",
+    "more_information": "http://www.hollywoodcpr.org/",
+    "interviewed": "Yes",
+    "location": {
+      "address": "P.O. Box 88459",
+      "city": "Los Angeles, CA 90009-8459",
+      "latitude": "34.055130",
+      "longitude": "-118.257030"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "not given",
+    "image": "",
+    "website": "www.hollywoodcpr.org",
+    "verified": true
+  },
+  {
+    "timestamp": "2018/07/16 1:29:30 PM MDT",
+    "organization": "826LA",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Tutoring, field trips, workshops, in-schools",
+    "creative_sector": "communication arts;publishing and printing",
+    "pipeline": "INSTRUCTION: increase students' interest, abilities and skills in the creative arts;RE-ENGAGEMENT: reconnect young people to their education and their future through the creative arts",
+    "overview": "Mission statement: 826LA is a non-profit organization dedicated to supporting students ages 6 to 18 with their creative and expository writing skills, and to helping teachers inspire their students to write.Our services are structured around our understanding that great leaps in learning can happen with one-on-one attention, and that strong writing skills are fundamental to future success. With this in mind, we provide after-school tutoring, evening and weekend workshops, in-school tutoring, help for English language learners, and assistance with student publications.\n\nAll of our programs are challenging and enjoyable, and ultimately strengthen each student�۪s power to express ideas effectively, creatively, confidently, and in his or her individual voice.",
+    "ages_served": "5-10;11-13;14;15;16;17;18;6-18",
+    "populations_served": "Low-income students",
+    "individuals_served": "more than 1000",
+    "community_served": "Central Los Angeles (Hollywood, Mid-City, Mid-Wilshire, Downtown, Koreatown, Pico-Union);Eastside (Boyle Heights, East Los Angeles, Lincoln Heights);South Los Angeles (Watts, Jefferson Park, Hyde Park, Historic South-Central, Baldwin Hills/Crenshaw);Westside (Mar Vista, Venice)",
+    "contact": "12515 Venice Blvd.\nLos Angeles, CA 90066\nTelephone: 310-915-0200\n\n1714 W. Sunset Blvd.\nLos Angeles, CA 90026\nTelephone: 213-413-3388",
+    "more_information": "http://826la.org/",
+    "interviewed": "No",
+    "location": {
+      "address": "12515 Venice Blvd.",
+      "city": "Los Angeles, CA 90066",
+      "latitude": "34.003213",
+      "longitude": "-118.434971"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "3109150200",
+    "image": "",
+    "website": "826la.org",
+    "verified": false
+  },
+  {
+    "timestamp": "2018/07/16 1:47:59 PM MDT",
+    "organization": "Alliance for Children's Rights",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Advocacy; Educational Equity for Foster and Probation Youth; Opportunity Youth Collaborative;",
+    "creative_sector": "",
+    "pipeline": "WORKFORCE READINESS: teach soft skills required for success in the creative industries;PLACEMENT: connect young people to workforce opportunities in the creative industries;STUDENT SUPPORTS: provide student supports such as food, transportation, supplies, clothing, health services, etc.",
+    "overview": "Educational Equity for Foster and Probation Youth: Our goal is to help young people in foster care avoid incarceration, homelessness, and other negative outcomes. By identifying the need for services, we can avoid disciplinary issues and address a youth�۪s education needs through tutoring, remedial courses, mental health services, special education, and other services. For youth already entering the juvenile justice system, our goal is to carve a path to a more productive future for both themselves and society as a whole.\n\nOpportunity Youth Collaborative: The Alliance for Children�۪s Rights spearheads the Los Angeles Opportunity Youth Collaborative (OYC), a multi-agency effort to improve education and employment outcomes for young adults who are or have been in foster care in Los Angeles.\n\nThe OYC brings together public agencies, nonprofit organizations, educational institutions and employers to improve services and resolve system barriers that impact the ability of young people to benefit from education and employment opportunities.",
+    "ages_served": "All ages/no age restrictions",
+    "populations_served": "Foster Youth;probation youth",
+    "individuals_served": "more than 1000",
+    "community_served": "County of Los Angeles",
+    "contact": "3333 Wilshire Blvd., Suite 550\nLos Angeles, CA 90010\n213.368.6010",
+    "more_information": "https://kids-alliance.org/",
+    "interviewed": "No",
+    "location": {
+      "address": "3333 Wilshire Blvd., Suite 550",
+      "city": "Los Angeles, CA 90010",
+      "latitude": "34.061932",
+      "longitude": "-118.295761"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "2133686010",
+    "image": "",
+    "website": "kids-alliance.org",
+    "verified": false
+  },
+  {
+    "timestamp": "2018/07/16 2:20:12 PM MDT",
+    "organization": "A Place Called Home",
+    "organizational_sector": "non-profit",
+    "county_affliated": "",
+    "initiatives": "Educational programs, counseling and mentorship.",
+    "creative_sector": "digital media;fine and performing arts school;visual and performing arts providers",
+    "pipeline": "INSTRUCTION: increase students' interest, abilities and skills in the creative arts;RE-ENGAGEMENT: reconnect young people to their education and their future through the creative arts;INTERNSHIPS: provide internship to young people in the creative industries;SCHOLARSHIPS: provide scholarships to young people in programs related to the creative industries",
+    "overview": "At A Place Called Home, caring staff, supporters and volunteers come together to provide South Central children and teens 8 years old ��� 21 years old with love, safety, enrichment, training, and opportunities through educational programs, counseling, and mentorship. After-school, weekend, and all-day summer programs and services include tutoring and homework support, as well as a full spectrum of instruction in the arts, athletics, dance and music.",
+    "ages_served": "5-10;11-13;14;15;16;17;18;19-24;8-21 years old",
+    "populations_served": "Low-income students",
+    "individuals_served": "more than 1000",
+    "community_served": "South Los Angeles (Watts, Jefferson Park, Hyde Park, Historic South-Central, Baldwin Hills/Crenshaw)",
+    "contact": "2830 S. Central Ave.\nLos Angeles, CA 90011\n(323) 232-7653",
+    "more_information": "https://apch.org/about/",
+    "interviewed": "No",
+    "location": {
+      "address": "2830 S. Central Ave.",
+      "city": "Los Angeles, CA 90011",
+      "latitude": "34.015754",
+      "longitude": "-118.255943"
+    },
+    "hours": {
+      "opens": "?",
+      "closes": "?"
+    },
+    "phone": "3232327653",
+    "image": "",
+    "website": "apch.org/about",
     "verified": false
   }
 ]

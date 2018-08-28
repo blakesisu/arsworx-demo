@@ -3,7 +3,7 @@
 @mixin container {
   display: block;
   position: relative;
-  max-width: 1080px;
+  // max-width: 1080px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -25,32 +25,15 @@
   border-bottom: 1px solid $colorGray-87;
 }
 
-// Forms
-// -------------------------------------------------------------------------- //
-@mixin form-row {
-  margin-bottom: 20px;
-}
-
-@mixin form-label {
-  display: block;
-  font-size: 14px;
-  font-weight: $fontSemiBold;
-  margin-bottom: 12px;
-}
-
-@mixin form-text-input {
-  font-size: $inputFontSize;
-  color: $colorText;
-  font-family: $fontSerif;
-}
-
 @mixin button {
   padding: 20px;
-  height: 48px;
-  max-width: 210px;
+  height: 55px;
+  max-width: 240px;
   background-color: #000000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
+  font-weight: 700;
 }

@@ -101,30 +101,26 @@ export class Directory extends React.Component {
   }
 
   handleFilter = (e, filterCandidate) => {
-    // if (e) e.preventDefault();
-    let status;
-
-    console.log('handleFilter', filterCandidate)
     let type = filterCandidate.type + 'Filters';
-    let typeFilter = [ ...this.state.filters[type] ];
+    let filters = { ...this.state.filters };
 
-    if (typeFilter.indexOf(filterCandidate.filter) > -1) {
-      typeFilter = typeFilter.filter(fltr => fltr !== filterCandidate.filter);
-      // status = false;
+    if (filters[type].indexOf(filterCandidate.filter) > -1) {
+      filters[type] = filters[type].filter(fltr => fltr !== filterCandidate.filter);
     } else {
-      typeFilter = typeFilter.concat(filterCandidate.filter)
-      // status = true;
+      filters[type] = filters[type].concat(filterCandidate.filter)
     }
 
-    this.setState({
-      filters : {
-        [type]: typeFilter
-      }
-    }, () => {
-      // do actions to filters
-      console.log('filter handled', this.state);
-    });
+    this.setState({ filters });
   }
+
+  resetFilters = e => {
+    console.log('reset filters')
+  }
+
+  applyFilters = e => {
+    console.log('apply filters')
+  }
+
 
   // Class methods
   // ------------------------------------------------------------------------ //
@@ -139,7 +135,7 @@ export class Directory extends React.Component {
         onClick={e => this.chooseProvider(e, provider)}
       >
         <div className="provider">
-          <p className={`provider__title`}>{provider.title}</p>
+          <p className={`provider__title`}>{provider.organization}</p>
           <p className={`provider__address`}>{provider.location.address}</p>
           <p className={`provider__city`}>{provider.location.city}</p>
           <p className={`provider__phone`}>{provider.phone}</p>
@@ -179,6 +175,8 @@ export class Directory extends React.Component {
                   toggleCheckbox={this.toggleCheckbox}
                   handleFilter={this.handleFilter}
                   filters={this.state.filters}
+                  resetFilters={this.resetFilters}
+                  applyFilters={this.applyFilters}
                 />)
               :
               (<ul className={`providers__list`}>

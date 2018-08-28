@@ -3,6 +3,7 @@ import React from 'react';
 
 // Components
 import ErrorBoundary from 'components/_shared/ErrorBoundary/ErrorBoundary';
+import Button from 'components/_shared/Button/Button';
 
 // SVGs
 import { ReactComponent as Collapse } from 'svgs/less_icon.svg';
@@ -63,6 +64,7 @@ export default class ProviderFilter extends React.Component {
             'populations section filter'
           ]
         },
+        // this is breaking
         individuals: {
           title: "Number of Individuals Served",
           visibility: false,
@@ -106,40 +108,28 @@ export default class ProviderFilter extends React.Component {
   // Render methods
   // ------------------------------------------------------------------------ //
   buildFilterCheckboxes = type => {
+    console.log('buildFilterCheckboxes', type, this.props)
     return (
-      <li className="providers__filter">
+      <ul className={`providers__${type}-filters`}>
         {this.state.filterTypes[type].filters.map(filter => (
-          <div>
-            <input
-              type="checkbox"
-              checked={this.props.filters[type + "Filters"].indexOf(filter) > -1}
-              onChange={e => this.props.handleFilter(e, {
-                  type,
-                  filter
-                })} />
+          <li key={filter.split(' ')[0]} className="providers__filter">
+            <label>
+              <input
+                type="checkbox"
+                checked={this.props.filters[type + "Filters"].indexOf(filter) > -1}
+                onChange={e => this.props.handleFilter(e, {
+                    type,
+                    filter
+                  })} />
+              <span className="fake-input"></span>
+            </label>
             <p>{filter}</p>
-          </div>
+          </li>
         )) }
-      </li>
+      </ul>
     )
   }
 
-
-  expandContract = type => {
-    if (type === 'effects') {
-      return (
-        <div onClick={e => this.toggleExpander(e, type)}>
-          {this.state.effects ? (<Collapse />) : (<Expand />) }
-        </div>
-      )
-    } else {
-      return (
-        <div onClick={e => this.toggleExpander(e, type)}>
-          {this.state.filterTypes[type].visibility ? (<Collapse />) : (<Expand />) }
-        </div>
-      )
-    }
-  }
 
   render() {
     return (
@@ -148,33 +138,45 @@ export default class ProviderFilter extends React.Component {
           <div className="providers__effects">
             <div className="providers__filter-header">
               <h2>Effects</h2>
-              { this.expandContract('effects') }
+              { <div className="providers__expand-icon" onClick={e => this.toggleExpander(e, 'effects')}>
+                  {this.state.effects ? (<Collapse/>) : (<Expand />) }
+                </div>
+              }
             </div>
             {this.state.effects ?
               (
-                <div className="providers__effects-list">
-                  <div className="providers__effect">
-                    <input
-                      type="checkbox"
-                      checked={this.props.refresh}
-                      onChange={e => this.props.toggleCheckbox(e, 'refresh')}/>
+                <ul className="providers__effects-list">
+                  <li className="providers__effect">
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={this.props.refresh}
+                        onChange={e => this.props.toggleCheckbox(e, 'refresh')}/>
+                      <span className="fake-input"></span>
+                    </label>
                     <p>Refresh map when repositioned</p>
-                  </div>
-                  <div className="providers__effect">
-                    <input
-                      type="checkbox"
-                      checked={this.props.overlayData.spa}
-                      onChange={e => this.props.toggleOverlay(e, 'spa')}/>
+                  </li>
+                  <li className="providers__effect">
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={this.props.overlayData.spa}
+                        onChange={e => this.props.toggleOverlay(e, 'spa')}/>
+                      <span className="fake-input"></span>
+                    </label>
                     <p>Show SPAs overlay</p>
-                  </div>
-                  <div className="providers__effect">
-                    <input
-                      type="checkbox"
-                      checked={this.props.overlayData.hood}
-                      onChange={e => this.props.toggleOverlay(e, 'hood')}/>
+                  </li>
+                  <li className="providers__effect">
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={this.props.overlayData.hood}
+                        onChange={e => this.props.toggleOverlay(e, 'hood')}/>
+                      <span className="fake-input"></span>
+                    </label>
                     <p>Show Neighborhoods overlay</p>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               )
               : null
             }
@@ -182,22 +184,42 @@ export default class ProviderFilter extends React.Component {
 
           {
             Object.keys(this.state.filterTypes).map(filterType => (
-              <div className={`providers__${filterType}`}>
+              <div key={filterType} className={`
+                providers__filters
+                providers__${filterType}`}>
                 <div className="providers__filter-header">
                   <h2>{ this.state.filterTypes[filterType].title }</h2>
-                  { this.expandContract(filterType) }
+                  { <div
+                      className="providers__expand-icon"
+                      onClick={e => this.toggleExpander(e, filterType)}>
+                      {this.state.filterTypes[filterType].visibility ? (<Collapse />) : (<Expand />) }
+                    </div>
+                  }
                 </div>
                 {this.state.filterTypes[filterType].visibility ?
                   (
-                    <ul className={`providers__${filterType}-filters`}>
+                    <React.Fragment>
                       {this.buildFilterCheckboxes(filterType)}
-                    </ul>
+                    </React.Fragment>
                   )
                   : null
                 }
               </div>
             ))
           }
+          <div className="providers__filters-ctas">
+            <Button
+              hollow={true}
+              className="providers__filters-btn"
+              value="Clear All"
+              onClick={this.props.resetFilters}
+            />
+            <Button
+              className="providers__filters-btn"
+              value="Apply"
+              onClick={this.props.applyFilters}
+            />
+          </div>
 
         </div>
       </ErrorBoundary>

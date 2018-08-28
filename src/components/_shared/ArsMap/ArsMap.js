@@ -87,7 +87,7 @@ class ArsMap extends React.Component {
               {provider.image ? 
                 <div className="provider__image"><img src={providerImages[provider.image]} alt="provider image"/></div> : null}
               <div key={provider.title} className={`provider-popup`}>
-                <p className={`provider-popup__title`}>{provider.title}</p>
+                <p className={`provider-popup__title`}>{provider.organization}</p>
                 <p className={`provider-popup__address`}>{provider.location.address}</p>
                 <p className={`provider-popup__city`}>{provider.location.city}</p>
                 <p className={`provider-popup__phone`}>{provider.phone}</p>

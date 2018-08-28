@@ -1,3 +1,144 @@
 @import 'components/_vars.scss';
 @import 'components/_mixins.scss';
 
+.providers__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.providers__filter-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+.providers__effects {
+  justify-content: space-between;
+}
+
+.providers__effects,
+.providers__filters {
+  @include border-bottom;
+  ul {
+    padding-top: 20px;
+  }
+}
+
+.providers__options {
+  & > * {
+    margin: 5px 5px 0 5px;
+    background-color: #ffffff;
+    padding: 30px 10px;
+  }
+}
+
+.providers__options {
+  height: 68%;
+  overflow: auto;
+}
+
+
+.providers__effect,
+.providers__filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  input {
+    margin-right: 10px;
+  }
+  margin: 0 10px 10px 0;
+}
+
+.providers__filters-ctas {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 27px 0; 
+}
+
+.providers__filters-btn {
+  width: 159px;
+  height: 55px;
+  border-radius: 28px;
+  background-color: $colorPrimary;
+  color: $colorWhite;
+  border: 1px solid $colorPrimary;
+}
+
+.providers__effect,
+.providers__filter {
+
+  input:not(:checked),
+  input:checked {
+    position: absolute;
+    left: -9999px;
+  }
+
+  input:not(:checked) + .fake-input,
+  input:checked + .fake-input {
+    position: relative;
+    padding-left: 41px;
+    cursor: pointer;
+  }
+
+  // checkbox aspect
+  input:not(:checked) + .fake-input:before,
+  input:checked + .fake-input:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $inputEmptyColor;
+    border-radius: 4px;
+  }
+
+  // checked mark aspect
+  input:not(:checked) + .fake-input:after,
+  input:checked + .fake-input:after {
+    content: '';
+    padding-left: 2px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    line-height: 1.5;
+    background: $colorPrimary;
+    transition: all .2s;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  // checked mark aspect changes
+  input:not(:checked) + .fake-input:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  input:checked + .fake-input:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  // disabled checkbox
+  input:disabled:not(:checked) + .fake-input:before,
+  input:disabled:checked + .fake-input:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  input:disabled:checked + .fake-input:after {
+    color: #999;
+  }
+  input:disabled + .fake-input {
+    color: #aaa;
+  }
+
+}
