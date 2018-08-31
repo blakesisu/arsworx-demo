@@ -73,11 +73,10 @@ export class App extends React.Component {
   // ------------------------------------------------------------------------ //
   render() {
 
-    // <Main />
     return (
       <div className="artworx-app">
         <ErrorBoundary>
-          <SiteHeader />
+          <SiteHeader path={this.props.location.pathname}/>
         </ErrorBoundary>
         <ErrorBoundary>
           <main className={`main`}>

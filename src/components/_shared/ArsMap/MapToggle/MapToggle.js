@@ -9,6 +9,7 @@ export default class MapToggle extends React.Component {
   triggerMapView = (e, flag) => {
     if (e) e.preventDefault();
     this.props.switchMapView(flag);
+    // make resize of map fill appropriate dims
     window.dispatchEvent(new Event('resize'));
   }
 

@@ -29,6 +29,13 @@ export class SiteHeader extends React.Component {
     menu: false
   }
 
+  routes = {
+    home: '/',
+    directory: '/directory',
+    report: '/report',
+    ['add me']: '/add-me'
+  };
+
   // Lifecycle methods
   // ------------------------------------------------------------------------ //
   // componentDidMount() {
@@ -37,7 +44,7 @@ export class SiteHeader extends React.Component {
   // Event handlers
   // ------------------------------------------------------------------------ //
   handleSiteSearch = () => {
-    console.log('handleSiteSearch')
+    console.log('handleSiteSearch', this.props)
   }
 
   handleMenu = () => {
@@ -57,6 +64,31 @@ export class SiteHeader extends React.Component {
 
   // Render methods
   // ------------------------------------------------------------------------ //
+  renderLinks = () => {
+    return (
+      <ul className={`
+        site-header__right
+        ${this.state.menu ? 'site-header--responsive' : ''}
+      `}>
+        {Object.keys(this.routes).map(route => (
+          <li
+            className={`
+              site-header__link
+              ${this.props.path === this.routes[route] ? "site-header--active" : ""}
+              `}
+            onClick={e => this.handleLink(e, this.routes[route])}>
+            <a href="#">{route}</a>
+          </li>
+        ))}
+        <li className="site-header__link site-header__search" onClick={this.handleSiteSearch}>
+          <img src={Search} alt="nav search"/>
+        </li>
+        <li className="site-header__link ham-icon"  onClick={this.handleMenu}>
+          <Hamburger alt="menu"/>
+        </li>
+      </ul>
+    )
+  }
 
   render() {
     return (
@@ -71,29 +103,7 @@ export class SiteHeader extends React.Component {
             </Link>
             <h2>Creative Careers Youth Network</h2>
           </div>
-          <ul className={`
-            site-header__right
-            ${this.state.menu ? 'site-header--responsive' : ''}
-          `}>
-            <li className="site-header__link" onClick={e => this.handleLink(e, '/')}>
-              <a href="#">Home</a>
-            </li>
-            <li className="site-header__link" onClick={e => this.handleLink(e, '/directory')}>
-              <a href="#">Directory</a>
-            </li>
-            <li className="site-header__link" onClick={e => this.handleLink(e, '/report')}>
-              <a href="#">Report</a>
-            </li>
-            <li className="site-header__link" onClick={e => this.handleLink(e, '/add-me')}>
-              <a href="#">Add Me</a>
-            </li>
-            <li className="site-header__link" onClick={this.handleSiteSearch}>
-              <img src={Search} alt="nav search"/>
-            </li>
-            <li className="site-header__link ham-icon"  onClick={this.handleMenu}>
-              <Hamburger alt="menu"/>
-            </li>
-          </ul>
+          { this.renderLinks() }
         </div>
       </header>
     )
