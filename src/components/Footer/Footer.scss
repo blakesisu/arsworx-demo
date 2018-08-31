@@ -11,4 +11,7 @@
   padding: 0 20px;
   background-color: $colorBlack;
   color: $colorWhite;
+  @media (max-width: 750px) {
+    height: 5vh;
+  }
 }

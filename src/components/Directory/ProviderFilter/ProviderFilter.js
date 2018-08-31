@@ -20,69 +20,66 @@ export default class ProviderFilter extends React.Component {
 
   // Constructor
   // ------------------------------------------------------------------------ //
-  constructor() {
-    super()
-    this.state = {
-      effects: false,
-      filterTypes: {
-        organization: {
-          title: "Organization Sector",
-          visibility: false,
-          filters: [
-            'creative industry',
-            'higher education',
-            'k-12/alt education',
-            'non-profit',
-            'workforce investment'
-          ]
-        },
-        creative: {
-          title: "Creative Sector Alignment",
-          visibility: false,
-          filters: [
-            'creative section filter'
-          ]
-        },
-        pipeline: {
-          title: "Pipeline Service",
-          visibility: false,
-          filters: [
-            'pipeline section filter'
-          ]
-        },
-        ages: {
-          title: "Ages Served",
-          visibility: false,
-          filters: [
-            'ages section filter'
-          ]
-        },
-        populations: {
-          title: "Populations Served",
-          visibility: false,
-          filters: [
-            'populations section filter'
-          ]
-        },
-        // this is breaking
-        individuals: {
-          title: "Number of Individuals Served",
-          visibility: false,
-          filters: [
-            'Less than 10',
-            '11-50',
-            '51-100',
-            '101-500',
-            '501-1000',
-            'More than 1000',
-          ]
-        }
-      }
-    }
-  }
 
   // Variables
   // ------------------------------------------------------------------------ //
+  state = {
+    effects: false,
+    filterTypes: {
+      organization: {
+        title: "Organization Sector",
+        visibility: false,
+        filters: [
+          'creative industry',
+          'higher education',
+          'k-12/alt education',
+          'non-profit',
+          'workforce investment'
+        ]
+      },
+      creative: {
+        title: "Creative Sector Alignment",
+        visibility: false,
+        filters: [
+          'creative section filter'
+        ]
+      },
+      pipeline: {
+        title: "Pipeline Service",
+        visibility: false,
+        filters: [
+          'pipeline section filter'
+        ]
+      },
+      ages: {
+        title: "Ages Served",
+        visibility: false,
+        filters: [
+          'ages section filter'
+        ]
+      },
+      populations: {
+        title: "Populations Served",
+        visibility: false,
+        filters: [
+          'populations section filter'
+        ]
+      },
+      // this is breaking
+      individuals: {
+        title: "Number of Individuals Served",
+        visibility: false,
+        filters: [
+          'Less than 10',
+          '11-50',
+          '51-100',
+          '101-500',
+          '501-1000',
+          'More than 1000',
+        ]
+      }
+    }
+  }
 
   // Lifecycle methods
   // ------------------------------------------------------------------------ //

@@ -3,10 +3,20 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 // react leaflet
-import { Map as LeafletMap, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
+import {
+  Circle,
+  FeatureGroup,
+  LayerGroup,
+  Map as LeafletMap,
+  TileLayer,
+  Marker,
+  Popup,
+  GeoJSON,
+  Rectangle } from 'react-leaflet';
 import L from 'leaflet';
 
 // Components
+import MapToggle from 'components/_shared/ArsMap/MapToggle/MapToggle';
 // SVGs
 import Sisu from 'images/sisu.png';
 // Constants
@@ -53,7 +63,7 @@ class ArsMap extends React.Component {
   // Event handlers
   // ------------------------------------------------------------------------ //
   handleClick = e => {
-    console.log('handleclick loc ', e, this.mapRef)
+    // console.log('handleclick loc ', e, this.mapRef)
     // this.mapRef.current.leafletElement.locate()
     const { lat, lng } = e.latlng;
     this.props.setLocation({ lat, lng});
@@ -114,17 +124,24 @@ class ArsMap extends React.Component {
       return this.props.overlay[key];
     })
     return (
-      <div className="arsmap">
+      <div className={`
+        arsmap
+        ${this.props.fullSize ? "arsmap--full" : ""}
+        `}>
         <LeafletMap
           center={this.props.location}
           zoom={this.props.zoom}
           ref={this.mapRef}
           onClick={this.handleClick}
           >
-            <TileLayer
-              attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
-              url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
-            />
+          <TileLayer
+            attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+            url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
+          />
+          <MapToggle
+            switchMapView={this.props.handleMapView}
+            mapView={this.props.fullSize}
+          />
           {this.props.providers.length > 0 && this.createMarkers()}
           {overlay && (<GeoJSON data={this.props.geoData[overlay + '_data']} />)}
         </LeafletMap>

@@ -30,32 +30,29 @@ export class Directory extends React.Component {
 
   // Constructor
   // ------------------------------------------------------------------------ //
-  constructor() {
-    super()
-    // Santa Cruz is default location
-    this.state = {
-      options: false,
-      overlay: {
-        spa: false,
-        hood: false
-      },
-      refresh: false,
-      filters: {
-        organizationFilters: [],
-        creativeFilters: [],
-        pipelineFilters: [],
-        agesFilters: [],
-        populationsFilters: [],
-        individualsFilters: [],
-      },
-      lat: 36.9741,
-      lng: -122.0308,
-      zoom: 13
-    }
-  }
 
   // Variables
   // ------------------------------------------------------------------------ //
+  state = {
+    mapView: false,
+    options: false,
+    overlay: {
+      spa: false,
+      hood: false
+    },
+    refresh: false,
+    filters: {
+      organizationFilters: [],
+      creativeFilters: [],
+      pipelineFilters: [],
+      agesFilters: [],
+      populationsFilters: [],
+      individualsFilters: [],
+    },
+    lat: 36.9741,
+    lng: -122.0308,
+    zoom: 14
+  }
 
   // Lifecycle methods
   // ------------------------------------------------------------------------ //
@@ -64,6 +61,12 @@ export class Directory extends React.Component {
 
   // Event handlers
   // ------------------------------------------------------------------------ //
+  handleMapView = flag => {
+    if (this.state.mapView !== flag) {
+      this.setState({ mapView: flag });
+    }
+  }
+
   chooseProvider = (e, provider) => {
     if (e) e.preventDefault();
     this.setLocation({
@@ -150,7 +153,10 @@ export class Directory extends React.Component {
     return (
       <ErrorBoundary>
         <div className={`directory`}>
-          <section className="providers">
+          <section className={`
+            providers
+            ${this.state.mapView ? "providers--no-vis" : ""}
+            `}>
             <div className="providers__search">
               <input className="providers__search-name" type="text" placeholder="Search by Organization Name"/>
               <input className="providers__search-address" type="text" />
@@ -185,6 +191,8 @@ export class Directory extends React.Component {
             }
           </section>
           <ArsMap
+            fullSize={this.state.mapView}
+            handleMapView={this.handleMapView}
             providers={this.props.providers.providers}
             location={[ this.state.lat, this.state.lng ]}
             setLocation={this.setLocation}

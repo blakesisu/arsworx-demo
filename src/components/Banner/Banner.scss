@@ -6,23 +6,42 @@
   // height: 200px;
   height: 17.5%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient( rgba(0,0,0,0.6), rgba(0, 0, 0, 0.6) ),url(./../../images/banner.png) no-repeat;
   background-size:cover;
   color: $colorWhite;
+  padding: 0 113px;
+  @media (max-width: 750px) {
+    padding: 0 20px;
+    height: 17.5vh;
+  }
+  @media (max-width: 415px) {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
   h1 {
     font-size: 70px;
     font-weight: 700;
     letter-spacing: 0.35px;
+    @media (min-width: 751px) {
+      line-height: 60px;
+    }
+    @media (max-width: 900px) {
+      font-size: 6vw;
+    }
   }
+
 }
 
 .banner__button {
   width: 240px;
   height: 55px;
   border-radius: 28px;
-  background-color: blue;
+  background-color: $colorPrimary;
   color: $colorWhite;
+  @media (max-width: 750px) {
+    width: 300px;
+  }
 }
 
