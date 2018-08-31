@@ -43,6 +43,7 @@ export class Directory extends React.Component {
     },
     refresh: false,
     filters: {
+      searchFilters: [],
       organizationFilters: [],
       creativeFilters: [],
       pipelineFilters: [],
@@ -131,12 +132,18 @@ export class Directory extends React.Component {
 
   // Class methods
   // ------------------------------------------------------------------------ //
+  filterProviders = provider => {
+    return provider;
+  }
 
   // Render methods
   // ------------------------------------------------------------------------ //
   renderProviders = () => {
 
-    return this.props.providers.providers.map(provider => (
+
+    return this.props.providers.providers
+      .filter(this.filterProviders)
+      .map(provider => (
       <li
         key={provider.title}
         className={`
@@ -168,7 +175,7 @@ export class Directory extends React.Component {
             <div className="providers__search">
               <input className="providers__search-name" type="text" placeholder="Search by Organization Name"/>
               <div className="providers__search-address">
-                <input  type="text" />
+                <input type="text" placeholder="Search by Location"/>
               </div>
             </div>
             <div className="providers__results">

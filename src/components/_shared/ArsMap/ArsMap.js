@@ -4,30 +4,32 @@ import { connect } from 'react-redux';
 
 // react leaflet
 import {
-  Circle,
-  FeatureGroup,
-  LayerGroup,
+  // Circle,
+  // FeatureGroup,
+  // LayerGroup,
   Map as LeafletMap,
   TileLayer,
   Marker,
   Popup,
   GeoJSON,
-  Rectangle } from 'react-leaflet';
+  // Rectangle
+} from 'react-leaflet';
 import L from 'leaflet';
 
 // Components
 import MapToggle from 'components/_shared/ArsMap/MapToggle/MapToggle';
 // SVGs
 import Sisu from 'images/sisu.png';
+import pin from 'svgs/pin.svg';
 // Constants
 // Styles
 import './ArsMap.css';
 
-import icon from 'leaflet/dist/images/marker-icon.png';
+// import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 let DefaultIcon = L.icon({
-    iconUrl: icon,
+    iconUrl: pin,
     shadowUrl: iconShadow
 });
 
