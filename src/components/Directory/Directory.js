@@ -34,6 +34,7 @@ export class Directory extends React.Component {
   // Variables
   // ------------------------------------------------------------------------ //
   state = {
+    currentProvider: null,
     mapView: false,
     options: false,
     overlay: {
@@ -69,10 +70,13 @@ export class Directory extends React.Component {
 
   chooseProvider = (e, provider) => {
     if (e) e.preventDefault();
-    this.setLocation({
-      lat: +provider.location.latitude,
-      lng: +provider.location.longitude
-    });
+    console.log('check provider', provider)
+    this.setState({currentProvider: provider.organization}, () => {
+      this.setLocation({
+        lat: +provider.location.latitude,
+        lng: +provider.location.longitude
+      });
+    })
   }
 
   setLocation = locationData => {
@@ -131,10 +135,14 @@ export class Directory extends React.Component {
   // Render methods
   // ------------------------------------------------------------------------ //
   renderProviders = () => {
+
     return this.props.providers.providers.map(provider => (
       <li
         key={provider.title}
-        className={`provider__container`}
+        className={`
+          provider__container
+          ${this.state.currentProvider === provider.organization ? 'provider--active' : ''}
+          `}
         onClick={e => this.chooseProvider(e, provider)}
       >
         <div className="provider">

@@ -142,3 +142,16 @@
     }
   }
 }
+
+.provider--active {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    background-color: $colorPrimary;
+    height: 100%;
+    width: 4px;
+  }
+}
