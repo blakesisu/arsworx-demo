@@ -159,7 +159,9 @@ export class Directory extends React.Component {
             `}>
             <div className="providers__search">
               <input className="providers__search-name" type="text" placeholder="Search by Organization Name"/>
-              <input className="providers__search-address" type="text" />
+              <div className="providers__search-address">
+                <input  type="text" />
+              </div>
             </div>
             <div className="providers__results">
               <div className="providers__results-title"><p>Search Results</p></div>

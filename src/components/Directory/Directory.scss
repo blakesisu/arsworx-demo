@@ -49,6 +49,22 @@
   }
 }
 
+.providers__search-address {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: url('./../../images/location_icon.png');
+    display: flex;
+    z-index: 250;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+  }
+}
+
 .providers__results {
   display: flex;
   flex-direction: row;
